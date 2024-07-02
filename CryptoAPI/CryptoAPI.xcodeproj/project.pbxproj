@@ -14,6 +14,9 @@
 		F23EC4822C346EB20037F40A /* CryptoAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4812C346EB20037F40A /* CryptoAPITests.swift */; };
 		F23EC48C2C346EB20037F40A /* CryptoAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC48B2C346EB20037F40A /* CryptoAPIUITests.swift */; };
 		F23EC48E2C346EB20037F40A /* CryptoAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC48D2C346EB20037F40A /* CryptoAPIUITestsLaunchTests.swift */; };
+		F23EC49B2C346FBA0037F40A /* Dado.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC49A2C346FBA0037F40A /* Dado.swift */; };
+		F23EC49E2C3470DF0037F40A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC49D2C3470DF0037F40A /* APIRequest.swift */; };
+		F23EC4A22C3472A20037F40A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4A12C3472A20037F40A /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		F23EC4872C346EB20037F40A /* CryptoAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23EC48B2C346EB20037F40A /* CryptoAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIUITests.swift; sourceTree = "<group>"; };
 		F23EC48D2C346EB20037F40A /* CryptoAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F23EC49A2C346FBA0037F40A /* Dado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dado.swift; sourceTree = "<group>"; };
+		F23EC49D2C3470DF0037F40A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F23EC4A12C3472A20037F40A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */,
-				F23EC4712C346EB00037F40A /* ContentView.swift */,
-				F23EC4732C346EB20037F40A /* Assets.xcassets */,
 				F23EC4752C346EB20037F40A /* CryptoAPI.entitlements */,
+				F23EC4732C346EB20037F40A /* Assets.xcassets */,
+				F23EC4A02C3471900037F40A /* View */,
+				F23EC49F2C3471710037F40A /* Services */,
+				F23EC49C2C3470BE0037F40A /* Model */,
 				F23EC4762C346EB20037F40A /* Preview Content */,
 			);
 			path = CryptoAPI;
@@ -127,6 +135,31 @@
 				F23EC48D2C346EB20037F40A /* CryptoAPIUITestsLaunchTests.swift */,
 			);
 			path = CryptoAPIUITests;
+			sourceTree = "<group>";
+		};
+		F23EC49C2C3470BE0037F40A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F23EC49A2C346FBA0037F40A /* Dado.swift */,
+				F23EC4A12C3472A20037F40A /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F23EC49F2C3471710037F40A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F23EC49D2C3470DF0037F40A /* APIRequest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F23EC4A02C3471900037F40A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F23EC4712C346EB00037F40A /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23EC4722C346EB00037F40A /* ContentView.swift in Sources */,
+				F23EC4A22C3472A20037F40A /* City.swift in Sources */,
 				F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */,
+				F23EC49E2C3470DF0037F40A /* APIRequest.swift in Sources */,
+				F23EC49B2C346FBA0037F40A /* Dado.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
