@@ -24,7 +24,6 @@ class APIRequest {
                 
                 DispatchQueue.main.async {
                     self?.data = data
-                    print(data)
                 }
             } catch {
                 print(error)

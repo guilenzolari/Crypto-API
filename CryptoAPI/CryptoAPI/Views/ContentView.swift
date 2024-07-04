@@ -33,8 +33,10 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-                .navigationTitle("AAAA")
-                .navigationBarItems(trailing: RefreshButton())
+                .navigationTitle("Principais Nodes da Rede Lightning")
+                    .navigationBarTitleDisplayMode(.inline)
+
+                .navigationBarItems(trailing: RefreshButton(api: api))
             }
         }
     }

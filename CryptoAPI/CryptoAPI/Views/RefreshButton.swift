@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RefreshButton: View {
+    @Bindable var api: APIRequest
+    
     var body: some View {
         VStack{
             Image(systemName: "arrow.clockwise")
@@ -15,12 +17,12 @@ struct RefreshButton: View {
                 .fontWeight(.regular)
                 .foregroundColor(.accentColor)
                 .onTapGesture {
-                    
+                    api.fetch()
                 }
         }
     }
 }
 
 #Preview {
-    RefreshButton()
+    RefreshButton(api: APIRequest())
 }
