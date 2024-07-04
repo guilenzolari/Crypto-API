@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F206D7A92C37445700E17369 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F206D7A82C37445700E17369 /* DetailView.swift */; };
 		F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E72C3714C200462070 /* ContentViewModel.swift */; };
 		F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E92C37190F00462070 /* RefreshButton.swift */; };
 		F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F206D7A82C37445700E17369 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F23591E72C3714C200462070 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		F23591E92C37190F00462070 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		F23EC46C2C346EB00037F40A /* CryptoAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				F23EC4712C346EB00037F40A /* ContentView.swift */,
+				F206D7A82C37445700E17369 /* DetailView.swift */,
 				F23591E92C37190F00462070 /* RefreshButton.swift */,
 			);
 			path = Views;
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23EC4722C346EB00037F40A /* ContentView.swift in Sources */,
+				F206D7A92C37445700E17369 /* DetailView.swift in Sources */,
 				F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */,
 				F23EC4A22C3472A20037F40A /* City.swift in Sources */,
 				F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */,
