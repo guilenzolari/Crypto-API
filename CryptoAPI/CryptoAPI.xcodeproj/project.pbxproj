@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E72C3714C200462070 /* ContentViewModel.swift */; };
+		F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E92C37190F00462070 /* RefreshButton.swift */; };
 		F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */; };
 		F23EC4722C346EB00037F40A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4712C346EB00037F40A /* ContentView.swift */; };
 		F23EC4742C346EB20037F40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23EC4732C346EB20037F40A /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F23591E72C3714C200462070 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F23591E92C37190F00462070 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		F23EC46C2C346EB00037F40A /* CryptoAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIApp.swift; sourceTree = "<group>"; };
 		F23EC4712C346EB00037F40A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F23591E62C3714A500462070 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F23591E72C3714C200462070 /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F23EC4632C346EB00037F40A = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +116,10 @@
 				F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */,
 				F23EC4752C346EB20037F40A /* CryptoAPI.entitlements */,
 				F23EC4732C346EB20037F40A /* Assets.xcassets */,
-				F23EC4A02C3471900037F40A /* View */,
+				F23591E62C3714A500462070 /* ViewModels */,
+				F23EC4A02C3471900037F40A /* Views */,
 				F23EC49F2C3471710037F40A /* Services */,
-				F23EC49C2C3470BE0037F40A /* Model */,
+				F23EC49C2C3470BE0037F40A /* Models */,
 				F23EC4762C346EB20037F40A /* Preview Content */,
 			);
 			path = CryptoAPI;
@@ -137,13 +150,13 @@
 			path = CryptoAPIUITests;
 			sourceTree = "<group>";
 		};
-		F23EC49C2C3470BE0037F40A /* Model */ = {
+		F23EC49C2C3470BE0037F40A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				F23EC49A2C346FBA0037F40A /* Dado.swift */,
 				F23EC4A12C3472A20037F40A /* City.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F23EC49F2C3471710037F40A /* Services */ = {
@@ -154,12 +167,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		F23EC4A02C3471900037F40A /* View */ = {
+		F23EC4A02C3471900037F40A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F23EC4712C346EB00037F40A /* ContentView.swift */,
+				F23591E92C37190F00462070 /* RefreshButton.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23EC4722C346EB00037F40A /* ContentView.swift in Sources */,
+				F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */,
 				F23EC4A22C3472A20037F40A /* City.swift in Sources */,
+				F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */,
 				F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */,
 				F23EC49E2C3470DF0037F40A /* APIRequest.swift in Sources */,
 				F23EC49B2C346FBA0037F40A /* Dado.swift in Sources */,

@@ -7,9 +7,10 @@
 
 import Foundation
 
-class APIRequest: ObservableObject {
+@Observable
+class APIRequest {
     
-    @Published var data: [Dado] = []
+    var data: [Dado] = []
     let url = "https://mempool.space/api/v1/lightning/nodes/rankings/connectivity"
     
     func fetch(){
