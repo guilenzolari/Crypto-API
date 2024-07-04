@@ -13,7 +13,6 @@ struct RefreshButton: View {
     var body: some View {
         VStack{
             Image(systemName: "arrow.clockwise")
-                .resizable()
                 .fontWeight(.regular)
                 .foregroundColor(.accentColor)
                 .onTapGesture {

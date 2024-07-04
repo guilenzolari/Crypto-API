@@ -8,40 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var api = APIRequest()
+    @Bindable var api: APIRequest
+    @State var viewModel = ContentViewModel()
     
     var body: some View {
         NavigationView{
-            if api.data.isEmpty{
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                    .scaleEffect(2.0, anchor: .center)
-                    .onAppear{api.fetch()}
-            } else {
-                List {
-                    ForEach(api.data, id: \.self){ data in
-                        VStack{
-                            Text(data.alias)
-                            Text(data.publicKey)
-                            Text(String(data.channels))
-                            Text(String(data.capacity))
-                            Text(String(data.firstSeen))
-                            Text(String(data.updatedAt))
+            
+            List {
+                ForEach(api.data, id: \.self){ data in
+                    VStack{
+                        Text(data.alias)
+                            .font(.title2).bold()
+                        Text("Chave pública: \(data.publicKey)")
+                        Text("Quantidade de Canais: \(data.channels)")
+                        Text("Capacidade: \(viewModel.satsToBitconConversion(sats: data.capacity)) BTC")
+                        Text("firstSeen: \(viewModel.formatUnixTime(TimeInterval(data.firstSeen)))")
+                        Text("Última atualização: \(viewModel.formatUnixTime(TimeInterval(data.updatedAt)))")
+                        
+                        HStack{
+                            Text("Localização:")
                             Text((data.city?.ptBR ?? data.city?.en) ?? "")
                             Text(data.country?.ptBR ?? data.country?.en ?? "")
                         }
                     }
-                    .padding()
                 }
-                .navigationTitle("Principais Nodes da Rede Lightning")
-                    .navigationBarTitleDisplayMode(.inline)
-
-                .navigationBarItems(trailing: RefreshButton(api: api))
+                .padding()
             }
+            .navigationTitle("Principais Nodes da Rede Lightning")
+            .navigationBarTitleDisplayMode(.inline)
+            
+            .navigationBarItems(trailing: RefreshButton(api: api))
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(api: APIRequest())
 }
