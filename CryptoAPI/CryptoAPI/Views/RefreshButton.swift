@@ -17,6 +17,7 @@ struct RefreshButton: View {
                 .foregroundColor(.accentColor)
                 .onTapGesture {
                     api.fetch()
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
         }
     }
