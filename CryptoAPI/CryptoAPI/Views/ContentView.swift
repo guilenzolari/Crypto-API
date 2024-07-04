@@ -36,8 +36,10 @@ struct ContentView: View {
             }
             .navigationTitle("Principais Nodes da Rede Lightning")
             .navigationBarTitleDisplayMode(.inline)
-            
             .navigationBarItems(trailing: RefreshButton(api: api))
+            .refreshable {
+                api.fetch()
+            }
         }
     }
 }
