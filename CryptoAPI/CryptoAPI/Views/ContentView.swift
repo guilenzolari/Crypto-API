@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @Bindable var api: APIRequest
     @State private var searchText = ""
+    var filteredNode: [Dado] {
+        guard !searchText.isEmpty else { return api.data }
+        return api.data.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
+    }
     
     var body: some View {
-        NavigationView{
+        NavigationStack {
             
             List {
-                ForEach(api.data, id: \.self){ data in
+                ForEach(filteredNode, id: \.self){ data in
                     VStack{
                         NavigationLink(data.alias, destination: DetailView(data: data))
                     }
@@ -24,7 +28,7 @@ struct ContentView: View {
             .navigationTitle("Principais Nodes da Rede Lightning")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: RefreshButton(api: api))
-            .searchable(text: $searchText, prompt: "Buscar")
+            .searchable(text: $searchText, prompt: "Buscar Node")
             .refreshable {
                 api.fetch()
             }

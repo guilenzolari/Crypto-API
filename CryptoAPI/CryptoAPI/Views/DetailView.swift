@@ -12,7 +12,7 @@ struct DetailView: View {
     var data: Dado
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack{
                 List {
                     Section{
