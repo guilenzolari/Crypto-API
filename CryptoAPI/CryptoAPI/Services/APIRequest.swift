@@ -10,7 +10,7 @@ import Foundation
 @Observable
 class APIRequest {
     
-    var data: [Dado] = []
+    var data: [Node] = []
     let url = "https://mempool.space/api/v1/lightning/nodes/rankings/connectivity"
     
     func fetch(){
@@ -20,7 +20,7 @@ class APIRequest {
             guard let data = data, error == nil else {return}
             
             do {
-                let data = try JSONDecoder().decode([Dado].self, from: data)
+                let data = try JSONDecoder().decode([Node].self, from: data)
                 
                 DispatchQueue.main.async {
                     self?.data = data

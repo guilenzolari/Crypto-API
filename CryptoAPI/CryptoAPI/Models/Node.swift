@@ -1,6 +1,6 @@
 import Foundation
 
-struct Dado: Codable, Hashable {
+struct Node: Codable, Hashable {
     let publicKey, alias: String
     let channels, capacity, firstSeen, updatedAt: Int
     let city, country: City?

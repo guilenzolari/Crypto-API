@@ -9,51 +9,34 @@ import SwiftUI
 
 struct DetailView: View {
     @State var viewModel = ContentViewModel()
-    var data: Dado
+    var data: Node
     
     var body: some View {
         NavigationStack {
             VStack{
                 List {
-                    Section{
+                    Section(header: Text("Public Key")){
                         HStack{
-                            Text("Chave Pública")
-                            Spacer()
                             Text("\(data.publicKey)")
                                 .font(.caption2)
                         }
-                        
-                        HStack{
-                            Text("Quantidade de Canais")
-                            Spacer()
-                            Text("\(data.channels)")
-                        }
-                        
-                        HStack{
-                            Text("Capacidade")
-                            Spacer()
-                            Text("\(viewModel.satsToBitconConversion(sats: data.capacity)) BTC")
-                        }
-                        
-                        HStack{
-                            Text("Data de Início")
-                            Spacer()
-                            Text("\(viewModel.formatUnixTime(TimeInterval(data.firstSeen)))")
-                        }
-                        
-                        HStack{
-                            Text("Última atualização")
-                            Spacer()
-                            Text("\(viewModel.formatUnixTime(TimeInterval(data.updatedAt)))")
-                        }
-                        
-                        HStack{
-                            Text("Localização")
-                            Spacer()
-                            Text((data.city?.ptBR ?? data.city?.en) ?? "")
-                            Text(data.country?.ptBR ?? data.country?.en ?? "")
-                        }
                     }
+                    
+                    Section{
+                        CustomListSection(fieldName: "Quantidade de Canais", fieldInfo: data.channels)
+                        CustomListSection(fieldName: "Capacidade (BTC)", fieldInfo: String(format: "%.2f", viewModel.satsToBitconConversion(sats: data.capacity)))
+                    }
+                    
+                    Section{
+                        CustomListSection(fieldName: "Data de Início", fieldInfo: viewModel.formatUnixTime(TimeInterval(data.firstSeen)))
+                        CustomListSection(fieldName: "Última atualização", fieldInfo: viewModel.formatUnixTime(TimeInterval(data.updatedAt)))
+                    }
+                    
+                    Section(header: Text("Localização")){
+                        CustomListSection(fieldName: "Cidade", fieldInfo: data.city?.ptBR ?? data.city?.en)
+                        CustomListSection(fieldName: "País", fieldInfo: data.country?.ptBR ?? data.country?.en)
+                    }
+                    
                 }
             }
             .navigationTitle(data.alias)

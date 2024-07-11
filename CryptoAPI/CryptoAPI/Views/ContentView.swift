@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Bindable var api: APIRequest
     @State private var searchText = ""
-    var filteredNode: [Dado] {
+    var filteredNode: [Node] {
         guard !searchText.isEmpty else { return api.data }
         return api.data.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
     }
