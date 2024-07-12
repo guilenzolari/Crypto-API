@@ -9,17 +9,17 @@ import SwiftUI
 
 @main
 struct CryptoAPIApp: App {
-    @State var api = APIRequest()
+    @State var vm = ContentViewModel()
     
     var body: some Scene {
         WindowGroup {
-            if api.data.isEmpty{
+            if vm.nodes.isEmpty{
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     .scaleEffect(2.0, anchor: .center)
-                    .onAppear{api.fetch()}
+                    .onAppear{vm.fetchNode()}
             } else {
-                ContentView(api: api)
+                ContentView(vm: vm)
             }
         }
     }

@@ -9,6 +9,14 @@ import Foundation
 
 @Observable
 class ContentViewModel {
+    var nodes: [Node] = []
+    
+    func fetchNode() {
+        APIService().fetchData { data in
+            self.nodes = data
+        }
+    }
+    
     func satsToBitconConversion(sats: Int) -> Float{
         let satoshis = Float(sats)
         return satoshis/100000000

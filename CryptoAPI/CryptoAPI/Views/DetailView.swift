@@ -43,7 +43,3 @@ struct DetailView: View {
         }
     }
 }
-
-#Preview {
-    DetailView(data: APIRequest().data[0])
-}

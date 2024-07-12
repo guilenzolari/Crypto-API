@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RefreshButton: View {
-    @Bindable var api: APIRequest
+    @Bindable var vm: ContentViewModel
     
     var body: some View {
         VStack{
@@ -16,13 +16,9 @@ struct RefreshButton: View {
                 .fontWeight(.regular)
                 .foregroundColor(.accentColor)
                 .onTapGesture {
-                    api.fetch()
+                    vm.fetchNode()
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
         }
     }
-}
-
-#Preview {
-    RefreshButton(api: APIRequest())
 }

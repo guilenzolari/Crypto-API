@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Bindable var api: APIRequest
+    @Bindable var vm: ContentViewModel
     @State private var searchText = ""
+    
     var filteredNode: [Node] {
-        guard !searchText.isEmpty else { return api.data }
-        return api.data.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
+        guard !searchText.isEmpty else { return vm.nodes }
+        return vm.nodes.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
     }
     
     var body: some View {
@@ -27,15 +28,11 @@ struct ContentView: View {
             }
             .navigationTitle("Principais Nodes da Rede Lightning")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: RefreshButton(api: api))
+            .navigationBarItems(trailing: RefreshButton(vm: vm))
             .searchable(text: $searchText, prompt: "Buscar Node")
             .refreshable {
-                api.fetch()
+                vm.fetchNode()
             }
         }
     }
-}
-
-#Preview {
-    ContentView(api: APIRequest())
 }
