@@ -13,13 +13,19 @@ struct CryptoAPIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if vm.nodes.isEmpty{
+            switch vm.state {
+            case .good:
+                ContentView(vm: vm)
+                    .onAppear{
+                        vm.fetchNode()
+                    }
+            case .isLoading:
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     .scaleEffect(2.0, anchor: .center)
                     .onAppear{vm.fetchNode()}
-            } else {
-                ContentView(vm: vm)
+            case .error(let errorDescription):
+                ErrorView(vm: vm, errorDescription: errorDescription)
             }
         }
     }

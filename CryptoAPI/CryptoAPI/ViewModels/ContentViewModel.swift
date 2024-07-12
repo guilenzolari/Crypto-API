@@ -10,10 +10,22 @@ import Foundation
 @Observable
 class ContentViewModel {
     var nodes: [Node] = []
+    var state: FetchState = .good
     
     func fetchNode() {
-        APIService().fetchData { data in
-            self.nodes = data
+        self.state = .isLoading
+        
+        APIService().fetchData { [weak self] result in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let results):
+                    self?.nodes = results
+                    self?.state = .good
+                    print("fetched nodes: \(results)")
+                case .failure(let error):
+                    self?.state = .error(error.localizedDescription)
+                }
+            }
         }
     }
     
