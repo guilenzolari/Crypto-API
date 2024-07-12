@@ -11,7 +11,7 @@
 		F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E72C3714C200462070 /* ContentViewModel.swift */; };
 		F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23591E92C37190F00462070 /* RefreshButton.swift */; };
 		F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */; };
-		F23EC4722C346EB00037F40A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4712C346EB00037F40A /* ContentView.swift */; };
+		F23EC4722C346EB00037F40A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4712C346EB00037F40A /* ListView.swift */; };
 		F23EC4742C346EB20037F40A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23EC4732C346EB20037F40A /* Assets.xcassets */; };
 		F23EC4782C346EB20037F40A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23EC4772C346EB20037F40A /* Preview Assets.xcassets */; };
 		F23EC4822C346EB20037F40A /* CryptoAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23EC4812C346EB20037F40A /* CryptoAPITests.swift */; };
@@ -24,6 +24,7 @@
 		F2B857692C419DF3006D6501 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857682C419DF3006D6501 /* APIError.swift */; };
 		F2B8576D2C41E6FD006D6501 /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8576C2C41E6FD006D6501 /* FetchState.swift */; };
 		F2B857702C41E83A006D6501 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8576F2C41E83A006D6501 /* ErrorView.swift */; };
+		F2B857742C41EDF7006D6501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857732C41EDF7006D6501 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		F23591E92C37190F00462070 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		F23EC46C2C346EB00037F40A /* CryptoAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23EC46F2C346EB00037F40A /* CryptoAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAPIApp.swift; sourceTree = "<group>"; };
-		F23EC4712C346EB00037F40A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F23EC4712C346EB00037F40A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F23EC4732C346EB20037F40A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F23EC4752C346EB20037F40A /* CryptoAPI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CryptoAPI.entitlements; sourceTree = "<group>"; };
 		F23EC4772C346EB20037F40A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		F2B857682C419DF3006D6501 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		F2B8576C2C41E6FD006D6501 /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		F2B8576F2C41E83A006D6501 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F2B857732C41EDF7006D6501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +184,8 @@
 		F23EC4A02C3471900037F40A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F23EC4712C346EB00037F40A /* ContentView.swift */,
+				F2B857732C41EDF7006D6501 /* ContentView.swift */,
+				F23EC4712C346EB00037F40A /* ListView.swift */,
 				F206D7A82C37445700E17369 /* DetailView.swift */,
 				F2B8576F2C41E83A006D6501 /* ErrorView.swift */,
 				F23591E92C37190F00462070 /* RefreshButton.swift */,
@@ -321,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F23EC4722C346EB00037F40A /* ContentView.swift in Sources */,
+				F23EC4722C346EB00037F40A /* ListView.swift in Sources */,
 				F206D7A92C37445700E17369 /* DetailView.swift in Sources */,
 				F2B8576D2C41E6FD006D6501 /* FetchState.swift in Sources */,
 				F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */,
@@ -331,6 +334,7 @@
 				F2B857702C41E83A006D6501 /* ErrorView.swift in Sources */,
 				F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */,
 				F2B857672C404787006D6501 /* CustomListSection.swift in Sources */,
+				F2B857742C41EDF7006D6501 /* ContentView.swift in Sources */,
 				F23EC49E2C3470DF0037F40A /* APIService.swift in Sources */,
 				F23EC49B2C346FBA0037F40A /* Node.swift in Sources */,
 			);
