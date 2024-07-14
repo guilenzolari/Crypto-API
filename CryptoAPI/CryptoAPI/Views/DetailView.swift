@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    @State var viewModel = ContentViewModel()
+    @State var viewModel = ContentViewModel(apiService: APIService())
     var data: Node
     
     var body: some View {

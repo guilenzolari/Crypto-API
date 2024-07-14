@@ -9,13 +9,19 @@ import Foundation
 
 @Observable
 class ContentViewModel {
+    let apiService: APIServiceProtocol
     var nodes: [Node] = []
     var state: FetchState = .good
+    
+    init(apiService: APIServiceProtocol) {
+        self.apiService = apiService
+        fetchNode()
+    }
     
     func fetchNode() {
         self.state = .isLoading
         
-        APIService().fetchData { [weak self] result in
+        apiService.fetchData { [weak self] result in
             DispatchQueue.main.async {
                 switch result{
                 case .success(let results):

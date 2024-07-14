@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ListView: View {
     @Bindable var vm: ContentViewModel
     @State private var searchText = ""
     

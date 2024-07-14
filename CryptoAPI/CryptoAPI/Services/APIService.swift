@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class APIService {
+class APIService: APIServiceProtocol {
     
     private let url = "https://mempool.space/api/v1/lightning/nodes/rankings/connectivity"
     
