@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-    @Bindable var vm: ContentViewModel
+    @EnvironmentObject var vm: ContentViewModel
     @State private var searchText = ""
     
     var filteredNode: [Node] {
@@ -28,7 +28,7 @@ struct ListView: View {
             }
             .navigationTitle("Principais Nodes da Rede Lightning")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: RefreshButton(vm: vm))
+            .navigationBarItems(trailing: RefreshButton())
             .searchable(text: $searchText, prompt: "Buscar Node")
             .refreshable {
                 vm.fetchNode()

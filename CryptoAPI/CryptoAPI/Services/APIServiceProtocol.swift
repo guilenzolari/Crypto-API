@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol APIServiceProtocol: AnyObject {
+protocol APIServiceProtocol {
     func fetchData(completion: @escaping (Result<[Node], APIError>) -> ())
 }

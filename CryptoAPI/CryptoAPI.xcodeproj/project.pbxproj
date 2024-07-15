@@ -25,6 +25,9 @@
 		F2B8576D2C41E6FD006D6501 /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8576C2C41E6FD006D6501 /* FetchState.swift */; };
 		F2B857702C41E83A006D6501 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B8576F2C41E83A006D6501 /* ErrorView.swift */; };
 		F2B857762C41F568006D6501 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857752C41F568006D6501 /* APIServiceProtocol.swift */; };
+		F2B857842C459573006D6501 /* APIMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857822C459573006D6501 /* APIMockService.swift */; };
+		F2B857852C459573006D6501 /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857832C459573006D6501 /* ContentViewModelTests.swift */; };
+		F2B857872C4598C3006D6501 /* ContenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B857862C4598C3006D6501 /* ContenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		F2B8576C2C41E6FD006D6501 /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		F2B8576F2C41E83A006D6501 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F2B857752C41F568006D6501 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
+		F2B857822C459573006D6501 /* APIMockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMockService.swift; sourceTree = "<group>"; };
+		F2B857832C459573006D6501 /* ContentViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		F2B857862C4598C3006D6501 /* ContenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				F23EC4812C346EB20037F40A /* CryptoAPITests.swift */,
+				F2B857822C459573006D6501 /* APIMockService.swift */,
+				F2B857832C459573006D6501 /* ContentViewModelTests.swift */,
 			);
 			path = CryptoAPITests;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 		F23EC4A02C3471900037F40A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F2B857862C4598C3006D6501 /* ContenView.swift */,
 				F23EC4712C346EB00037F40A /* ListView.swift */,
 				F206D7A82C37445700E17369 /* DetailView.swift */,
 				F2B8576F2C41E83A006D6501 /* ErrorView.swift */,
@@ -331,6 +340,7 @@
 				F23591EA2C37190F00462070 /* RefreshButton.swift in Sources */,
 				F2B857692C419DF3006D6501 /* APIError.swift in Sources */,
 				F23EC4A22C3472A20037F40A /* City.swift in Sources */,
+				F2B857872C4598C3006D6501 /* ContenView.swift in Sources */,
 				F23591E82C3714C200462070 /* ContentViewModel.swift in Sources */,
 				F2B857702C41E83A006D6501 /* ErrorView.swift in Sources */,
 				F23EC4702C346EB00037F40A /* CryptoAPIApp.swift in Sources */,
@@ -344,7 +354,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B857842C459573006D6501 /* APIMockService.swift in Sources */,
 				F23EC4822C346EB20037F40A /* CryptoAPITests.swift in Sources */,
+				F2B857852C459573006D6501 /* ContentViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

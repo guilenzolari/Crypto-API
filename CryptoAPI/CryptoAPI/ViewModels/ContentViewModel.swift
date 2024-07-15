@@ -7,11 +7,10 @@
 
 import Foundation
 
-@Observable
-class ContentViewModel {
+class ContentViewModel: ObservableObject {
     let apiService: APIServiceProtocol
-    var nodes: [Node] = []
-    var state: FetchState = .good
+    @Published var nodes: [Node] = []
+    @Published var state: FetchState = .good
     
     init(apiService: APIServiceProtocol) {
         self.apiService = apiService

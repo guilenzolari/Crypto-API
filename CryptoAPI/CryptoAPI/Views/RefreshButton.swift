@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RefreshButton: View {
-    @Bindable var vm: ContentViewModel
-    
+    @EnvironmentObject var vm: ContentViewModel
+
     var body: some View {
         VStack{
             Image(systemName: "arrow.clockwise")

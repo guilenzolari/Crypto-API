@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @Bindable var vm: ContentViewModel
+    @EnvironmentObject var vm: ContentViewModel
     var errorDescription: String
     
     var body: some View {
