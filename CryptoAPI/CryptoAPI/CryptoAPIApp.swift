@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct CryptoAPIApp: App {
-    @StateObject var vm = ContentViewModel(apiService: APIService())
+    @StateObject var viewModel = ContentViewModel(apiService: APIService())
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(vm)
+                .environmentObject(viewModel)
         }
     }
 }

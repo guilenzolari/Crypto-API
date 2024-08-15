@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RefreshButton: View {
-    @EnvironmentObject var vm: ContentViewModel
+    @EnvironmentObject var viewModel: ContentViewModel
 
     var body: some View {
         VStack{
@@ -16,7 +16,7 @@ struct RefreshButton: View {
                 .fontWeight(.regular)
                 .foregroundColor(.accentColor)
                 .onTapGesture {
-                    vm.fetchNode()
+                    viewModel.fetchNode()
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                 }
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum FetchState: Comparable {
-    case good
+    case success
     case isLoading
     case error(String)
 }

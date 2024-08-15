@@ -23,10 +23,12 @@ class APIService: APIServiceProtocol {
             
             if let error = error as? URLError {
                 completion(Result.failure(APIError.urlSession(error)))
-            } else if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
+                return }
+            
+            if let response = response as? HTTPURLResponse, 
+                !(200...299).contains(response.statusCode) {
                 completion(Result.failure(APIError.badResponse(response.statusCode)))
             } else if let data = data {
-                
                 do {
                     let result = try JSONDecoder().decode([Node].self, from: data)
                         completion(Result.success(result))
@@ -37,4 +39,8 @@ class APIService: APIServiceProtocol {
         }
         task.resume()
     }
+}
+
+protocol APIServiceProtocol {
+    func fetchData(completion: @escaping (Result<[Node], APIError>) -> ())
 }

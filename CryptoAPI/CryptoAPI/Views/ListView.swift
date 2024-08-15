@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct ListView: View {
-    @EnvironmentObject var vm: ContentViewModel
-    @State private var searchText = ""
-    
-    var filteredNode: [Node] {
-        guard !searchText.isEmpty else { return vm.nodes }
-        return vm.nodes.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
-    }
+    @EnvironmentObject var viewModel: ContentViewModel
     
     var body: some View {
         NavigationStack {
             
             List {
-                ForEach(filteredNode, id: \.self){ data in
+                ForEach(viewModel.filteredNode, id: \.self){ data in
                     VStack{
                         NavigationLink(data.alias, destination: DetailView(data: data))
                     }
@@ -29,9 +23,9 @@ struct ListView: View {
             .navigationTitle("Principais Nodes da Rede Lightning")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: RefreshButton())
-            .searchable(text: $searchText, prompt: "Buscar Node")
+            .searchable(text: $viewModel.searchText, prompt: "Buscar Node")
             .refreshable {
-                vm.fetchNode()
+                viewModel.fetchNode()
             }
         }
     }

@@ -10,7 +10,11 @@ import Foundation
 class ContentViewModel: ObservableObject {
     let apiService: APIServiceProtocol
     @Published var nodes: [Node] = []
-    @Published var state: FetchState = .good
+    @Published var state: FetchState = .success
+    @Published var searchText = ""
+    var filteredNode: [Node] {
+        nodeFilter(searchText: searchText)
+    }
     
     init(apiService: APIServiceProtocol) {
         self.apiService = apiService
@@ -18,17 +22,18 @@ class ContentViewModel: ObservableObject {
     }
     
     func fetchNode() {
-        self.state = .isLoading
+        state = .isLoading
         
         apiService.fetchData { [weak self] result in
+            guard let self else {return}
             DispatchQueue.main.async {
                 switch result{
                 case .success(let results):
-                    self?.nodes = results
-                    self?.state = .good
+                    self.nodes = results
+                    self.state = .success
                     print("fetched nodes: \(results)")
                 case .failure(let error):
-                    self?.state = .error(error.localizedDescription)
+                    self.state = .error(error.localizedDescription)
                 }
             }
         }
@@ -47,4 +52,10 @@ class ContentViewModel: ObservableObject {
         
         return formattedDate
     }
+    
+    private func nodeFilter(searchText: String) -> [Node] {
+        guard !searchText.isEmpty else { return nodes }
+        return nodes.filter { $0.alias.localizedCaseInsensitiveContains(searchText)}
+    }
+    
 }

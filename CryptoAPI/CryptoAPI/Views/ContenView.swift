@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var vm: ContentViewModel
+    @EnvironmentObject var viewModel: ContentViewModel
     
     var body: some View {
-        switch vm.state {
-        case .good:
+        switch viewModel.state {
+        case .success:
             ListView()
         case .isLoading:
             ProgressView()

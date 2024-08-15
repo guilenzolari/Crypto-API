@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var vm: ContentViewModel
+    @EnvironmentObject var viewModel: ContentViewModel
     var errorDescription: String
     
     var body: some View {
@@ -22,7 +22,7 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
             
             Button {
-                vm.fetchNode()
+                viewModel.fetchNode()
             } label: {
                 Text("Tentar Novamente")
                     .padding()

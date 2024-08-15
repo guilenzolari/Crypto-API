@@ -5,7 +5,7 @@ struct Node: Codable, Hashable {
     let channels, capacity, firstSeen, updatedAt: Int
     let city, country: City?
     let isoCode, subdivision: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case publicKey, alias, channels, capacity, firstSeen, updatedAt, city, country
         case isoCode = "iso_code"
@@ -20,16 +20,17 @@ struct Node: Codable, Hashable {
                     firstSeen: 1522941222,
                     updatedAt: 1720700463,
                     city: nil,
-                    country: City(de: "Vereinigte Staaten",
-                                  en: "United States",
-                                  es: "Estados Unidos",
-                                  fr: "États Unis",
-                                  ja: "アメリカ",
-                                  ptBR: "EUA",
-                                  ru: "США",
-                                  zhCN: "美国"),
+                    country: City(
+                        de: "Vereinigte Staaten",
+                        en: "United States",
+                        es: "Estados Unidos",
+                        fr: "États Unis",
+                        ja: "アメリカ",
+                        ptBR: "EUA",
+                        ru: "США",
+                        zhCN: "美国"
+                    ),
                     isoCode: "US",
                     subdivision: nil)
-        
     }
 }

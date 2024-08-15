@@ -57,9 +57,9 @@ final class ContentViewModelTests: XCTestCase {
         let timeStamp: TimeInterval = 1522941222
         
         let result = Result<[Node], APIError>.failure(APIError.badURL)
-        let vm = ContentViewModel(apiService: APIMockService(result: result))
+        let viewModel = ContentViewModel(apiService: APIMockService(result: result))
 
-        let time = vm.formatUnixTime(timeStamp)
+        let time = viewModel.formatUnixTime(timeStamp)
         
         XCTAssertEqual(time, "05/04/2018 12:13:42")
     }
